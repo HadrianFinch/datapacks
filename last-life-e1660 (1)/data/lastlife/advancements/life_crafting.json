@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "Recipie": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "lastlife:lastlife_newlife"
+            }
+        }
+    },
+    "rewards": {
+        "function": "last_life:add_life"
+    }
+}
