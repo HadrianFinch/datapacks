@@ -28,6 +28,9 @@ execute if score #recipe LastLifeconfig matches 1 run recipe give @a lastlife:la
 execute if score #recipe LastLifeconfig matches 1 run recipe take @a minecraft:enchanting_table
 execute if score #recipe LastLifeconfig matches 1 run recipe take @a minecraft:bookshelf
 
+execute as @a run tag @s add canCraftLifes
+execute as @a run recipe take @s lastlife:lastlife_newlife
+
 #scedule 30 second grace period
 schedule function last_life:grace 120s
 team join gracelife @a

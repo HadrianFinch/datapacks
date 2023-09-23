@@ -4,6 +4,7 @@
 		"scotbat:tick/tnt_arrow",
 		"scotbat:tick/fire_arrow",
 		"scotbat:tick/summoning_arrow",
-		"scotbat:tick/cage_arrow"
+		"scotbat:tick/cage_arrow",
+		"scotbat:tick/item_return"
 	]
 }
