@@ -4,3 +4,6 @@
 # execute as @e[type=player,tag=respawnExecute] run scoreboard players add @s aliveCounter 1
 # execute as @a[scores={aliveCounter=1},tag=respawnExecute] run give @s recovery_compass 
 # execute as @a[scores={aliveCounter=1..},tag=respawnExecute] run tag @s remove respawnExecut
+
+clear @a[gamemode=survival] enchanting_table
+setblock 0 70 0 enchanting_table
