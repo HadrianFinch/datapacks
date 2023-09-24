@@ -1,7 +1,6 @@
 {
 	"values":
 	[
-		"wireless:load/scoreboard-setup",
-		"wireless:load/enable-triggers"
+		"scotbat:load/load"
 	]
 }
