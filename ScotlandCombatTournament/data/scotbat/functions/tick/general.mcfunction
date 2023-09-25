@@ -7,3 +7,6 @@
 
 clear @a[gamemode=survival] enchanting_table
 setblock 0 70 0 enchanting_table
+
+kill @e[type=piglin_brute]
+kill @e[type=phantom]
