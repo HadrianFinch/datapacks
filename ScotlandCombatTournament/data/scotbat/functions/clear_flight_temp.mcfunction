@@ -1,0 +1,1 @@
+data modify entity @a[tag=temp_fly, limit=1] abilities.mayfly set value 0b
