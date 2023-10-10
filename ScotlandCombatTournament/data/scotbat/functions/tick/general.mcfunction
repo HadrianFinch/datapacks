@@ -27,5 +27,11 @@ scoreboard players remove @e[scores={wizz=1..}] wizz 1
 execute as @e[type=armor_stand, tag=alarm_area] at @s run execute as @a[distance=..30, tag=!wizard_role, tag=!wizard_partner] run tellraw @a[tag=wizard_role] [{"text":"Someone entered your alarmed area! "},{"text":"Teleport","color":"dark_purple","bold":true,"italic":true,"hoverEvent":{"action":"show_text","value":[{"text":"Teleport yourself to the area"}]},"clickEvent":{"action":"run_command","value":"/tp @s @e[type=armor_stand, tag=alarm_area, limit=1]"}}]
 execute as @e[type=armor_stand, tag=alarm_area] at @s run particle effect ~ ~ ~ 30 0 30 1 60 normal @a[tag=wizard_role]
 
+execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run effect give @s speed 2 1 true
+execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run effect give @s jump_boost 2 2 true
+execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run effect give @s dolphins_grace 2 0 true
+execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run attribute @s generic.max_health base set 16
+execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] at @s run fill ~-1 ~-2 ~-1 ~1 ~ ~1 obsidian replace lava
+
 # scoreboard players remove @e[type=item_frame, nbt={Item:{id:"minecraft:lightning_rod"}}, scores={wirelessRS_pulse_length=1..}] wirelessRS_pulse_length 1
 # execute as @e[type=item_frame, nbt={Item:{id:"minecraft:lightning_rod"}}, scores={wirelessRS_pulse_length=0}] run function wireless:wand_use_off

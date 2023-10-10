@@ -7,6 +7,7 @@
 
 execute as @a[nbt={Inventory:[{Slot: -106b, id: "minecraft:enchanted_book", tag:{alarm_spell: 1b}}]}] at @s run summon armor_stand ~ ~ ~ {Invisible: true, Tags:["alarm_area", "Marker"]}
 execute as @a[nbt={Inventory:[{Slot: -106b, id: "minecraft:enchanted_book", tag:{cure_wounds_spell: 1b}}]}] at @s run effect give @a[distance=..4, tag=wizard_role] instant_health 1 4
+execute as @a[nbt={Inventory:[{Slot: -106b, id: "minecraft:enchanted_book", tag:{cure_wounds_spell: 1b}}]}] at @s run effect give @a[distance=..4, tag=wizard_partner] instant_health 1 4
 
 
 execute as @a[nbt={Inventory:[{Slot: -106b, id: "minecraft:enchanted_book", tag:{invisibility_spell: 1b}}]}] at @s positioned ^ ^ ^3 run effect give @p[distance=..5] invisibility 600 1 true
