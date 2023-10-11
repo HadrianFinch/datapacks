@@ -11,9 +11,6 @@ setblock 0 70 0 enchanting_table
 kill @e[type=piglin_brute]
 kill @e[type=phantom]
 
-execute as @a[tag=wizard_role] at @s run function scotbat:wizard
-
-
 ######## RIGHT CLICK
 #### Create scoreboard
 scoreboard objectives add wizz minecraft.used:minecraft.carrot_on_a_stick
