@@ -33,5 +33,44 @@ execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run effect 
 execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run attribute @s generic.max_health base set 16
 execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] at @s run fill ~-1 ~-2 ~-1 ~1 ~ ~1 obsidian replace lava
 
-# scoreboard players remove @e[type=item_frame, nbt={Item:{id:"minecraft:lightning_rod"}}, scores={wirelessRS_pulse_length=1..}] wirelessRS_pulse_length 1
-# execute as @e[type=item_frame, nbt={Item:{id:"minecraft:lightning_rod"}}, scores={wirelessRS_pulse_length=0}] run function wireless:wand_use_off
+execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{regen_aura:1b}}]}] at @s run effect give @a[distance=..3] saturation 4 2 true
+execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{regen_aura:1b}}]}] at @s run particle effect ~ ~ ~ 3 0 3 1 20 normal @a
+
+execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{wither_aura:1b}}]}] at @s run effect give @e[type=!player, distance=..5] wither 4 4 true
+execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{wither_aura:1b}}]}] at @s run particle effect ~ ~ ~ 5 0 5 1 20 normal @a
+
+execute as @a[tag=tank_role, gamemode=!creative] run attribute @s generic.max_health base set 100
+execute as @a[tag=tank_role, gamemode=!creative] run attribute @s generic.attack_speed base set 3
+execute as @a[tag=tank_role, gamemode=!creative] run attribute @s generic.armor base set 0
+execute as @a[tag=tank_role, gamemode=!creative] run attribute @s generic.armor_toughness base set 0
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s iron_chestplate
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s diamond_chestplate
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s netherite_chestplate
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s chainmail_chestplate
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s iron_helmet
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s iron_boots
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s iron_leggings
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s diamond_helmet
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s diamond_boots
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s diamond_leggings
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s netherite_helmet
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s netherite_boots
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s netherite_leggings
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s chainmail_helmet
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s chainmail_boots
+execute as @a[tag=tank_role, gamemode=!creative] run clear @s chainmail_leggings
+
+execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s if block ~ ~ ~ water run effect give @s conduit_power 20 0 true
+execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s if block ~ ~ ~ water run effect give @s dolphins_grace 20 0 true
+execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s if block ~ ~ ~ water run effect give @s saturation 2 0 true
+
+
+execute as @a[tag=hunter_role] run item replace entity @s inventory.0 with spectral_arrow 64
+execute as @a[tag=merchant_role] run item replace entity @s inventory.0 with emerald 64
+execute as @a[tag=ghost_role] run item replace entity @s hotbar.8 with ender_pearl 16
+
+execute as @a[nbt={Inventory:[{Slot: 102b, tag:{invisibility_cloak:1b}}]}] at @s run effect give @s invisibility 2 0 true
+
+# execute as @e[type=vex] run data modify entity @s Attributes[{Name:"generic.follow_range"}].Base set value 0
+
+# execute as @e[type=vex, limit=1] at @s run summon snowball ~ ~ ~ {Owner: [I;0,0,0,1], Motion: [0, 1, 0]}
