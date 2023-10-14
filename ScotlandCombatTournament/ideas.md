@@ -15,7 +15,7 @@ Has a powerfully enchanted bow (Power, Punch) as well as a full suite of OP tric
 ## Cleric
 *tag: cleric_role*
 
-Has two items that create powerfull hea ack hostile mobs for you.
+Has two items that create powerfull regeneration or withering auras. Also has a guardian angel that will attack hostile mobs for the player
 
 ## Dasher
 Has a pair of unbreakable netherite boots that reduce all falldamage, grant Speed, Jump Boost, Super fast swiming, and the ability to walk across water and lava.
@@ -67,3 +67,7 @@ Has the ability to set a number of waypoints and teleport back to them at will.
 *tag: merchant_role*
 
 Has unlimited emeralds.
+
+## Cavalier
+Can ride on any entity, mob, or player.
+
