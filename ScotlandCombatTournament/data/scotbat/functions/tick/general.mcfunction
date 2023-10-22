@@ -103,4 +103,15 @@ execute as @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] run kil
 execute as @a[scores={return_home_time=150..}] in minecraft:overworld run tp @s ~ ~ ~
 execute as @a[scores={return_home_time=150..}] run scoreboard players set @s return_home_time 0
 
+execute as @a[nbt={Inventory:[{Slot: 103b, tag:{god_armor:1b}}]}] at @s run effect give @s night_vision 60 5 true
 
+
+######## RIGHT CLICK
+#### Create scoreboard
+scoreboard objectives add mine minecraft.used:minecraft.carrot_on_a_stick
+
+#### Detect players who hold the carrot on a stick and right click
+execute as @a[scores={mine=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {mine_tube:1b}}}] as @s at @s run fill ^-2 ^ ^-2 ^2 ^20 ^2 air destroy
+
+#### Reset objective
+scoreboard players remove @e[scores={mine=1..}] mine 1
