@@ -1,7 +1,7 @@
 {
     "ultrawarm": false,
     "natural": true,
-    "coordinate_scale": 16,
+    "coordinate_scale": 32,
     "has_skylight": false,
     "has_ceiling": false,
     "ambient_light": 1,
@@ -12,7 +12,7 @@
     "bed_works": true,
     "respawn_anchor_works": false,
     "has_raids": false,
-    "logical_height": 150,
+    "logical_height": 800,
     "min_y": 0,
     "height": 1024,
     "effects": "minecraft:the_end",

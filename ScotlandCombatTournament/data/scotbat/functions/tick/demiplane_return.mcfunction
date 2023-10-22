@@ -1,0 +1,1 @@
+scoreboard players add @a[distance=..3] return_home_time 1
