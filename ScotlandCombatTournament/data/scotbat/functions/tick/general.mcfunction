@@ -30,6 +30,17 @@ execute as @a[scores={ride=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_st
 #### Reset objective
 scoreboard players remove @e[scores={ride=1..}] ride 1
 
+
+######## RIGHT CLICK
+#### Create scoreboard
+scoreboard objectives add freeze minecraft.used:minecraft.carrot_on_a_stick
+
+#### Detect players who hold the carrot on a stick and right click
+execute as @a[scores={freeze=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {freeze_time_item:1b}}}] as @s at @s run function scotbat:freeze_time_for_noon
+
+#### Reset objective
+scoreboard players remove @e[scores={freeze=1..}] freeze 1
+
 execute as @e[type=armor_stand, tag=alarm_area] at @s run execute as @a[distance=..30, tag=!wizard_role, tag=!wizard_partner] run tellraw @a[tag=wizard_role] [{"text":"Someone entered your alarmed area! "},{"text":"Teleport","color":"dark_purple","bold":true,"italic":true,"hoverEvent":{"action":"show_text","value":[{"text":"Teleport yourself to the area"}]},"clickEvent":{"action":"run_command","value":"/tp @s @e[type=armor_stand, tag=alarm_area, limit=1]"}}]
 execute as @e[type=armor_stand, tag=alarm_area] at @s run particle effect ~ ~ ~ 30 0 30 1 60 normal @a[tag=wizard_role]
 
@@ -71,12 +82,13 @@ execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s 
 execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s if block ~ ~ ~ water run effect give @s saturation 2 0 true
 
 
-execute as @a[tag=hunter_role] run item replace entity @s inventory.0 with spectral_arrow 64
+execute as @a[tag=hunter_role] run item replace entity @s inventory.0 with arrow 64
 execute as @a[tag=merchant_role] run item replace entity @s inventory.0 with emerald 64
 execute as @a[tag=ghost_role] run item replace entity @s hotbar.8 with ender_pearl 16
 
 execute as @a[nbt={Inventory:[{Slot: 102b, tag:{invisibility_cloak:1b}}]}] at @s run effect give @s invisibility 2 0 true
 
-# execute as @e[type=vex] run data modify entity @s Attributes[{Name:"generic.follow_range"}].Base set value 0
 
-# execute as @e[type=vex, limit=1] at @s run summon snowball ~ ~ ~ {Owner: [I;0,0,0,1], Motion: [0, 1, 0]}
+execute as @e[type=snowball,nbt={Item:{id:"minecraft:snowball",tag:{sunbolt:1b}}}] at @s run execute as @e[tag=!noon_knight, type=!snowball, distance=1..3] at @s run damage @s 10 magic by @a[tag=noon_knight, limit=1]
+execute as @e[type=snowball,nbt={Item:{id:"minecraft:snowball",tag:{sunbolt:1b}}}] at @s run execute as @e[tag=!noon_knight, type=!snowball, distance=1] at @s run damage @s 28 magic by @a[tag=noon_knight, limit=1]
+

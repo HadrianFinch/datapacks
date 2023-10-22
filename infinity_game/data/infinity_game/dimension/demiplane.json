@@ -1,0 +1,34 @@
+{
+    "type": "infinity_game:demiplane_type",
+    "generator": {
+        "settings": {
+            "structure_overrides": "minecraft:end_cities",
+            "layers": [
+                {
+                    "block": "minecraft:bedrock",
+                    "height": 40
+                },
+                {
+                    "block": "minecraft:deepslate",
+                    "height": 30
+                },
+                {
+                    "block": "minecraft:stone",
+                    "height": 30
+                },
+                {
+                    "block": "minecraft:dirt",
+                    "height": 4
+                },
+                {
+                    "block": "minecraft:grass_block",
+                    "height": 1
+                }
+            ],
+            "biome": "minecraft:plains",
+            "features": false,
+            "lakes": false
+        },
+        "type": "minecraft:flat"
+    }
+}
