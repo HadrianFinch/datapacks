@@ -97,7 +97,7 @@ execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] run execute as 
 execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest] run give @s nether_star{display:{Name:'{"text":"Demiplane Access Token","color":"dark_blue","bold":false,"italic":false}',Lore:['{"text":"Throw on ground to activate"}']},HideFlags:1,demiplane_access:1b,Enchantments:[{}]} 1
 execute as @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] run kill @s
 
-execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest, tag=!hermit_role] run execute in infinity_game:demiplane run tp @s -0.5 106 -97.5
+execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest, tag=!hermit_role] run execute in infinity_game:demiplane run tp @s 0.5 106 0.5
 execute as @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] run kill @s
 
 execute as @a[scores={return_home_time=150..}] in minecraft:overworld run tp @s ~ ~ ~
