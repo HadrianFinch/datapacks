@@ -111,7 +111,14 @@ execute as @a[nbt={Inventory:[{Slot: 103b, tag:{god_armor:1b}}]}] at @s run effe
 scoreboard objectives add mine minecraft.used:minecraft.carrot_on_a_stick
 
 #### Detect players who hold the carrot on a stick and right click
-execute as @a[scores={mine=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {mine_tube:1b}}}] as @s at @s run fill ^-2 ^ ^-2 ^2 ^20 ^2 air destroy
+execute as @a[scores={mine=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {mine_tube:1b}}}] as @s at @s run fill ~-8 -60 ~-8 ~8 ~2 ~8 air
+execute as @a[scores={mine=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {mine_tube:1b}}}] as @s at @s run setblock ~ ~-1 ~ bedrock
+
 
 #### Reset objective
 scoreboard players remove @e[scores={mine=1..}] mine 1
+
+execute as @a[nbt={Inventory:[{Slot: -106b, tag:{flight_item:1b}}]}] at @s run effect give @s slow_falling 1 0 true
+execute as @a[nbt={SelectedItem:{tag:{flight_item:1b}}}] at @s run effect give @s levitation 1 15 true
+execute as @a[nbt={Inventory:[{Slot: -106b, tag:{flight_item:1b}}]}] at @s run effect give @s speed 1 5
+execute as @a[nbt={SelectedItem:{tag:{flight_item:1b}}}] at @s run effect give @s speed 1 5
