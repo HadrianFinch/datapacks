@@ -1,2 +1,3 @@
 scoreboard objectives add GiveMeAHat trigger
 scoreboard objectives add return_home_time dummy
+scoreboard objectives add crouch_detect minecraft.custom:sneak_time
