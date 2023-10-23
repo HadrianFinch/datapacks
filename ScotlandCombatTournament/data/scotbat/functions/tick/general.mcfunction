@@ -93,21 +93,24 @@ execute as @e[type=snowball,nbt={Item:{id:"minecraft:snowball",tag:{sunbolt:1b}}
 execute as @e[type=snowball,nbt={Item:{id:"minecraft:snowball",tag:{sunbolt:1b}}}] at @s run execute as @e[tag=!noon_knight, type=!snowball, distance=1] at @s run damage @s 28 magic by @a[tag=noon_knight, limit=1]
 
 
-execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest] run execute in infinity_game:demiplane run tp @s -0.5 106 -97.5
-execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest] run give @s nether_star{display:{Name:'{"text":"Demiplane Access Token","color":"dark_blue","bold":false,"italic":false}',Lore:['{"text":"Throw on ground to activate"}']},HideFlags:1,demiplane_access:1b,Enchantments:[{}]} 1
-execute as @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] run kill @s
+execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run particle flash ~ ~ ~ 0 0 0 0.1 1 normal
+execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest] run give @s nether_star{display:{Name:'{"text":"Demiplane Access Token","color":"dark_blue","bold":false,"italic":false}',Lore:['{"text":"Throw on ground to activate"}']},HideFlags:1,demiplane_access:1b,Enchantments:[{}]} 1
+execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest] run execute in infinity_game:demiplane run tp @s 0.5 106 0.5
+execute as @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run kill @s
 
-execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest, tag=!hermit_role] run execute in infinity_game:demiplane run tp @s 0.5 106 0.5
-execute as @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] run kill @s
+execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] if entity @a[distance=..3, tag=!hermit_role] run particle flash ~ ~ ~ 0 0 0 0.1 1 normal
+execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest, tag=!hermit_role] run execute in infinity_game:demiplane run tp @s 0.5 106 0.5
+execute as @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] at @s if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] if entity @a[distance=..2, tag=!hermit_role] run kill @s
 
-execute as @a[scores={return_home_time=150..}] in minecraft:overworld run tp @s ~ ~ ~
-execute as @a[scores={return_home_time=150..}] run scoreboard players set @s return_home_time 0
+execute at @a[scores={return_home_time=100..}] run particle flash ~ ~ ~ 0 0 0 0.1 1 normal
+execute as @a[scores={return_home_time=100..}] in minecraft:overworld at @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run tp @s ~ ~ ~
+execute as @a[scores={return_home_time=100..}] run scoreboard players set @s return_home_time 0
 
 execute as @a[nbt={Inventory:[{Slot: 103b, tag:{god_armor:1b}}]}] at @s run effect give @s night_vision 60 5 true
 
 
 ######## RIGHT CLICK
-#### Create scoreboard
+# Create scoreboard
 scoreboard objectives add mine minecraft.used:minecraft.carrot_on_a_stick
 
 #### Detect players who hold the carrot on a stick and right click
@@ -122,3 +125,10 @@ execute as @a[nbt={Inventory:[{Slot: -106b, tag:{flight_item:1b}}]}] at @s run e
 execute as @a[nbt={SelectedItem:{tag:{flight_item:1b}}}] at @s run effect give @s levitation 1 15 true
 execute as @a[nbt={Inventory:[{Slot: -106b, tag:{flight_item:1b}}]}] at @s run effect give @s speed 1 5
 execute as @a[nbt={SelectedItem:{tag:{flight_item:1b}}}] at @s run effect give @s speed 1 5
+
+execute at @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run forceload add ~ ~
+execute as @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run data modify entity @s Invulnerable set value 1b
+execute as @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run data modify entity @s Invisible set value 1b
+execute at @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run particle enchant ~ ~ ~ 1 1 1 0.1 1 normal
+
+
