@@ -168,11 +168,38 @@ scoreboard players reset @a[scores={crouch_detect=10..}] crouch_detect
 
 # Alchemist
 execute as @e[type=potion, nbt={Item:{tag:{smoke_cloud_potion:1b}}}] at @s unless block ~ ~-1 ~ air run summon armor_stand ~ ~ ~ {Invisible:1b, Invulnerable:1b, Tags:["smoke_cloud"]}
-# execute as @e[type=potion, nbt={Item:{tag:{smoke_cloud_potion:1b}}}] at @s unless block ~ ~-~ air run say saoidnasndkjnd asdj wd
-# execute as @e[type=potion, nbt={Item:{tag:{smoke_cloud_potion:1b}}}] unless block ~ ~-1 ~ air run kill @s
-
-
+execute as @e[type=potion, nbt={Item:{tag:{smoke_cloud_potion:1b}}}] at @s unless block ~ ~-1 ~ air run kill @s
 
 execute as @e[type=armor_stand, tag=smoke_cloud] run scoreboard players add @s armor_stand_kill_time 1
 execute as @e[type=armor_stand, tag=smoke_cloud, scores={armor_stand_kill_time=200..}] run kill @s
 execute at @e[type=armor_stand, tag=smoke_cloud] run particle campfire_signal_smoke ~ ~ ~ 10 4 10 0.01 500 normal
+
+
+
+
+execute as @e[type=potion, nbt={Item:{tag:{cobweb_potion:1b}}}] at @s unless block ~ ~-1 ~ air run fill ~-2 ~-2 ~-2 ~2 ~2 ~2 cobweb replace air
+execute as @e[type=potion, nbt={Item:{tag:{cobweb_potion:1b}}}] at @s unless block ~ ~-1 ~ air run kill @s
+
+
+execute as @e[type=potion, nbt={Item:{tag:{drop_potion:1b}}}] at @s unless block ~ ~-1 ~ air run tag @a[distance=..3] add butterfingers
+execute as @e[type=potion, nbt={Item:{tag:{drop_potion:1b}}}] at @s unless block ~ ~-1 ~ air run schedule function scotbat:clear_butterfingers 30s
+execute as @e[type=potion, nbt={Item:{tag:{drop_potion:1b}}}] at @s unless block ~ ~-1 ~ air run kill @s
+
+execute as @a[tag=butterfingers] at @s run execute if data entity @s SelectedItem positioned ~ ~0.4 ~ run summon item ^ ^ ^0.3 {Item:{id:"minecraft:stone",Count:1b},Tags:["dropped"], PickupDelay: 40}
+execute as @a[tag=butterfingers] at @s run data modify entity @e[type=item,tag=dropped,limit=1] Item set from entity @s SelectedItem
+tag @e[type=item] remove dropped
+execute as @a[tag=butterfingers] at @s run item replace entity @s weapon.mainhand with air
+
+
+execute as @e[type=potion, nbt={Item:{tag:{fire_potion:1b}}}] at @s unless block ~ ~-1 ~ air run fill ~-8 ~-2 ~-8 ~8 ~2 ~8 fire replace air
+execute as @e[type=potion, nbt={Item:{tag:{fire_potion:1b}}}] at @s unless block ~ ~-1 ~ air run kill @s
+
+execute as @a[nbt={SelectedItem:{id:"minecraft:potion",tag:{false_death_potion:1b}}}] run tag @s add held_potion_of_false_death
+execute as @a[tag=held_potion_of_false_death,scores={drink_potion=1..}] run tellraw @a ["",{"selector":"@a[tag=potion_role, limit=1, sort=nearest]"},{"text":"\u0020died"}]
+execute as @a[nbt=!{SelectedItem:{id:"minecraft:potion",tag:{false_death_potion:1b}}}] run tag @s remove held_potion_of_false_death
+
+execute as @a[nbt={SelectedItem:{id:"minecraft:potion",tag:{death_potion:1b}}}] run tag @s add death_potion
+execute as @a[tag=death_potion,scores={drink_potion=1..}] run kill @s
+execute as @a[nbt=!{SelectedItem:{id:"minecraft:potion",tag:{death_potion:1b}}}] run tag @s remove death_potion
+scoreboard players reset @a drink_potion
+

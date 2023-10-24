@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " S ",
+        "DCD",
+        " I "
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:nether_star"
+        },
+        "I": {
+            "item": "minecraft:iron_ingot"
+        },
+        "C": {
+            "item": "minecraft:brewing_stand"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "item": "minecraft:knowledge_book"
+    }
+}
