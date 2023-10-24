@@ -164,3 +164,15 @@ execute as @a[scores={crouch_detect=10..}] at @s if entity @e[type=item_frame, n
 execute as @a[scores={crouch_detect=10..}] at @s if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_15:1b}}}, distance=..1] if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_15:1b}}}, distance=1..] at @e[type=item_frame, nbt={Item:{tag:{teleport_point_15:1b}}}, distance=1.., limit=1] run tp @s ~ ~ ~
 execute as @a[scores={crouch_detect=10..}] at @s if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_16:1b}}}, distance=..1] if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_16:1b}}}, distance=1..] at @e[type=item_frame, nbt={Item:{tag:{teleport_point_16:1b}}}, distance=1.., limit=1] run tp @s ~ ~ ~
 scoreboard players reset @a[scores={crouch_detect=10..}] crouch_detect
+
+
+# Alchemist
+execute as @e[type=potion, nbt={Item:{tag:{smoke_cloud_potion:1b}}}] at @s unless block ~ ~-1 ~ air run summon armor_stand ~ ~ ~ {Invisible:1b, Invulnerable:1b, Tags:["smoke_cloud"]}
+# execute as @e[type=potion, nbt={Item:{tag:{smoke_cloud_potion:1b}}}] at @s unless block ~ ~-~ air run say saoidnasndkjnd asdj wd
+# execute as @e[type=potion, nbt={Item:{tag:{smoke_cloud_potion:1b}}}] unless block ~ ~-1 ~ air run kill @s
+
+
+
+execute as @e[type=armor_stand, tag=smoke_cloud] run scoreboard players add @s armor_stand_kill_time 1
+execute as @e[type=armor_stand, tag=smoke_cloud, scores={armor_stand_kill_time=200..}] run kill @s
+execute at @e[type=armor_stand, tag=smoke_cloud] run particle campfire_signal_smoke ~ ~ ~ 10 4 10 0.01 500 normal
