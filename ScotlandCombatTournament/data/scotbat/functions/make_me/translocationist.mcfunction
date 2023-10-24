@@ -19,3 +19,4 @@ give @s nether_star{display:{Name:'{"text":"Teleport Anchor","color":"aqua"}',Lo
 give @s nether_star{display:{Name:'{"text":"Teleport Anchor","color":"aqua"}',Lore:['{"text":"Linked pair #15"}']},HideFlags:5,teleport_point_15:1b, teleport_point_any:1b,Enchantments:[{}]} 2
 give @s nether_star{display:{Name:'{"text":"Teleport Anchor","color":"aqua"}',Lore:['{"text":"Linked pair #16"}']},HideFlags:5,teleport_point_16:1b, teleport_point_any:1b,Enchantments:[{}]} 2
 
+give @s light_blue_shulker_box

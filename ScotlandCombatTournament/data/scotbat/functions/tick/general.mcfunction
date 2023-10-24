@@ -121,6 +121,19 @@ execute as @a[scores={mine=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_st
 #### Reset objective
 scoreboard players remove @e[scores={mine=1..}] mine 1
 
+
+######## RIGHT CLICK
+# Create scoreboard
+scoreboard objectives add explode minecraft.used:minecraft.carrot_on_a_stick
+
+#### Detect players who hold the carrot on a stick and right click
+execute as @a[scores={explode=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {explode_detonator:1b}}}] run execute as @e[type=item_frame, nbt={Item:{id:"minecraft:tnt", tag:{bomb_tnt:1b}}}] at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 air destroy
+execute as @a[scores={explode=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {explode_detonator:1b}}}] run execute as @e[type=item_frame, nbt={Item:{id:"minecraft:tnt", tag:{bomb_tnt:1b}}}] at @s run particle explosion ~ ~ ~ 8 8 8 1 4 normal
+execute as @a[scores={explode=1..}, nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag: {explode_detonator:1b}}}] run execute as @e[type=item_frame, nbt={Item:{id:"minecraft:tnt", tag:{bomb_tnt:1b}}}] at @s run kill @s
+
+#### Reset objective
+scoreboard players remove @e[scores={explode=1..}] explode 1
+
 execute as @a[nbt={Inventory:[{Slot: -106b, tag:{flight_item:1b}}]}] at @s run effect give @s slow_falling 1 0 true
 execute as @a[nbt={SelectedItem:{tag:{flight_item:1b}}}] at @s run effect give @s levitation 1 15 true
 execute as @a[nbt={Inventory:[{Slot: -106b, tag:{flight_item:1b}}]}] at @s run effect give @s speed 1 5
@@ -151,4 +164,3 @@ execute as @a[scores={crouch_detect=10..}] at @s if entity @e[type=item_frame, n
 execute as @a[scores={crouch_detect=10..}] at @s if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_15:1b}}}, distance=..1] if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_15:1b}}}, distance=1..] at @e[type=item_frame, nbt={Item:{tag:{teleport_point_15:1b}}}, distance=1.., limit=1] run tp @s ~ ~ ~
 execute as @a[scores={crouch_detect=10..}] at @s if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_16:1b}}}, distance=..1] if entity @e[type=item_frame, nbt={Item:{tag:{teleport_point_16:1b}}}, distance=1..] at @e[type=item_frame, nbt={Item:{tag:{teleport_point_16:1b}}}, distance=1.., limit=1] run tp @s ~ ~ ~
 scoreboard players reset @a[scores={crouch_detect=10..}] crouch_detect
-

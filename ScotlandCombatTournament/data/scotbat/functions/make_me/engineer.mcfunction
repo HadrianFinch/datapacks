@@ -5,3 +5,6 @@ give @s wooden_pickaxe{Enchantments: [{id:"minecraft:vanishing_curse",lvl:1s}, {
 give @s wooden_shovel{Enchantments: [{id:"minecraft:vanishing_curse",lvl:1s}, {id: "efficiency", lvl: 10}], Unbreakable: true, display:{Name:'{"text":"Engineer\'s Shovel","color":"gold"}'},HideFlags:1,RepairCost:100}
 give @s wooden_axe{Enchantments: [{id:"minecraft:vanishing_curse",lvl:1s}, {id: "efficiency", lvl: 20}], Unbreakable: true, display:{Name:'{"text":"Engineer\'s Axe","color":"gold"}'},HideFlags:1,RepairCost:100}
 
+give @s carrot_on_a_stick{display:{Name:'{"text":"Remote Detonator","color":"red","bold":false,"italic":false}'},HideFlags:1,Unbreakable:1b,explode_detonator:1b,Enchantments:[]} 1
+give @s item_frame 16
+give @s tnt{bomb_tnt:1b, display:{Name:'"Excavation Tnt"'}} 32
