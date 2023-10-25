@@ -1,0 +1,8 @@
+{
+    "condition": "minecraft:location_check",
+    "predicate": {
+        "block": {
+            "nbt": "{Items:[{Slot:1b,id:\"minecraft:milk_bucket\",Count:2b},{Slot:4b,id:\"minecraft:glass_bottle\",Count:1b,},{Slot:3b,id:\"minecraft:blue_ice\",Count:1b,},{Slot:5b,id:\"minecraft:blue_ice\",Count:1b,},{Slot:6b,id:\"minecraft:command_block\",Count:1b,tag:{potion_dust:1b}},{Slot:7b,id:\"minecraft:gunpowder\",Count:1b},{Slot:5b,id:\"minecraft:command_block\",Count:1b,tag:{potion_dust:1b}}]}"
+        }
+    }
+}
