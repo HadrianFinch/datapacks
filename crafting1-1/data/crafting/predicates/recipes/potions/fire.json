@@ -2,7 +2,7 @@
     "condition": "minecraft:location_check",
     "predicate": {
         "block": {
-            "nbt": "{Items:[{Slot:1b,id:\"minecraft:fire_charge\",Count:2b},{Slot:4b,id:\"minecraft:glass_bottle\",Count:1b,},{Slot:3b,id:\"minecraft:lava_bucket\",Count:1b,},{Slot:5b,id:\"minecraft:lava_bucket\",Count:1b,},{Slot:6b,id:\"minecraft:redstone\",Count:32b,},{Slot:7b,id:\"minecraft:gunpowder\",Count:1b},{Slot:5b,id:\"minecraft:redstone\",Count:32b,}]}"
+            "nbt": "{Items:[{Slot:1b,id:\"minecraft:fire_charge\",Count:2b,},{Slot:4b,id:\"minecraft:glass_bottle\",Count:1b,},{Slot:3b,id:\"minecraft:lava_bucket\",Count:1b,},{Slot:5b,id:\"minecraft:lava_bucket\",Count:1b,},{Slot:6b,id:\"minecraft:redstone\",Count:32b,},{Slot:7b,id:\"minecraft:gunpowder\",Count:1b,},{Slot:8b,id:\"minecraft:redstone\",Count:32b}]}"
         }
     }
 }
