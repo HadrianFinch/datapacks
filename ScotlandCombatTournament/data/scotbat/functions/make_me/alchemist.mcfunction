@@ -13,8 +13,8 @@ give @s minecraft:potion{CustomPotionEffects:[{Id:1,Amplifier:9,Duration:1200},{
 
 give @s minecraft:potion{CustomPotionEffects:[{Id:10,Amplifier:3,Duration:200,ShowParticles:0b},{Id:21,Duration:-1,ShowParticles:0b}],CustomPotionColor:16739226,display:{Name:'"Potion of Life"'}} 2
 give @s minecraft:potion{CustomPotionEffects:[{Id:26,Amplifier:4,Duration:24000}],CustomPotionColor:4978176,display:{Name:'"Potion of Luck"'}} 2
-give @s minecraft:potion{CustomPotionEffects:[{Id:11,Amplifier:4,Duration:9840},{Id:12,Duration:9840}],CustomPotionColor:5933789,display:{Name:'"Potion of Resistance"'}} 2
+give @s minecraft:potion{CustomPotionEffects:[{Id:11,Amplifier:1,Duration:9840},{Id:12,Duration:9840}],CustomPotionColor:5933789,display:{Name:'"Potion of Resistance"'}} 2
 
 give @s minecraft:splash_potion{CustomPotionEffects:[{Id:25,Amplifier:4,Duration:2400}],CustomPotionColor:16186075,display:{Name:'"Potion of Levitation"'}} 2
 
-give @s command_block{display:{Name:'{"text":"Sculk Powder","color":"dark_blue","bold":false,"italic":false}'},HideFlags:5,CustomModelData:5005,Enchantments:[{}], potion_dust:1b} 32
+# give @s command_block{display:{Name:'{"text":"Sculk Powder","color":"dark_blue","bold":false,"italic":false}'},HideFlags:5,CustomModelData:5005,Enchantments:[{}], potion_dust:1b} 32
