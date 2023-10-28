@@ -102,8 +102,9 @@ execute at @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] if entity @e[ty
 execute as @e[type=item, nbt={Item:{tag:{demiplane_access:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run kill @s
 
 execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] if entity @a[distance=..3, tag=!hermit_role] run particle flash ~ ~ ~ 0 0 0 0.1 1 normal
+execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] if entity @a[distance=..3, tag=!hermit_role] run tag @s add used
 execute at @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run execute as @a[distance=..3, limit=1, sort=nearest, tag=!hermit_role] run execute in infinity_game:demiplane run tp @s 0.5 106 0.5
-execute as @e[type=item, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] at @s if entity @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] if entity @a[distance=..2, tag=!hermit_role] run kill @s
+execute as @e[type=item, tag=used, nbt={Item:{tag:{demiplane_invite_onetime:1b}}}] at @s run kill @s
 
 execute at @a[scores={return_home_time=100..}] run particle flash ~ ~ ~ 0 0 0 0.1 1 normal
 execute as @a[scores={return_home_time=100..}] in minecraft:overworld at @e[type=item_frame, nbt={Item:{tag:{anchor_point:1b}}}] run tp @s ~ ~ ~
