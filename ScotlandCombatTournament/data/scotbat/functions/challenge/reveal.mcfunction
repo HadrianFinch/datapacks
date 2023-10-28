@@ -1,3 +1,4 @@
+scoreboard objectives add challenge_completed_stars dummy
 
 # Session 1: Beat The Game
 title @a title {"text":"Get The Dragon Egg","color":"light_purple"}
@@ -9,3 +10,7 @@ tellraw @a {"text": "To complete: Enter the nether, collect blaze rods from a fo
 tellraw @a {"text": "", "bold": false}
 tellraw @a {"text": "Sub-Challenge: Establish a base/house and show another member of the server. (+1 reward star)", "italic": true}
 spreadplayers ~ ~ 200 100 false @a
+scoreboard players set @a challenge_completed_stars 2
+scoreboard objectives add challenge_complete picked_up:dragon_egg
+
+# Session 2: 

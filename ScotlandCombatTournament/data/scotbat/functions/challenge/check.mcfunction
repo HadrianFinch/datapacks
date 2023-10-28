@@ -1,0 +1,1 @@
+execute as @a[scores={challenge_complete=1..}] at @s run function scotbat:challenge/end

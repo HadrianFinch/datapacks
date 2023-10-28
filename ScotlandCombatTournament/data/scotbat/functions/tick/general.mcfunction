@@ -10,6 +10,8 @@
 
 kill @e[type=piglin_brute]
 
+function scotbat:challenge/check
+
 ######## RIGHT CLICK
 #### Create scoreboard
 scoreboard objectives add wizz minecraft.used:minecraft.carrot_on_a_stick
