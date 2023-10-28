@@ -1,0 +1,1 @@
+give @s nether_star{display:{Name:'{"text":"Reward Star","color":"gold","bold":false,"italic":false}',Lore:['{"text":"Can be used in crafting","bold":false,"italic":true}']},HideFlags:5,CustomModelData:1025,reward_star:1b,Enchantments:[{}]} 1

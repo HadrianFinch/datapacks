@@ -18,6 +18,8 @@ execute as @s[tag=crafting.crafted.escape] at @s positioned ~ ~1 ~ unless predic
 execute as @s[tag=crafting.crafted.power] at @s positioned ~ ~1 ~ unless predicate crafting:recipes/potions/power positioned ~ ~0.5 ~ run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:air",Count:1b}
 execute as @s[tag=crafting.crafted.life] at @s positioned ~ ~1 ~ unless predicate crafting:recipes/potions/life positioned ~ ~0.5 ~ run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:air",Count:1b}
 execute as @s[tag=crafting.crafted.luck] at @s positioned ~ ~1 ~ unless predicate crafting:recipes/potions/luck positioned ~ ~0.5 ~ run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:air",Count:1b}
+execute as @s[tag=crafting.crafted.resistance] at @s positioned ~ ~1 ~ unless predicate crafting:recipes/potions/resistance positioned ~ ~0.5 ~ run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:air",Count:1b}
+execute as @s[tag=crafting.crafted.levitation] at @s positioned ~ ~1 ~ unless predicate crafting:recipes/potions/resistance positioned ~ ~0.5 ~ run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:air",Count:1b}
 # execute as @s[tag=crafting.crafted.rocket1] at @s positioned ~ ~1 ~ unless predicate crafting:recipes/rockets/rocket1 positioned ~ ~0.5 ~ run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:air",Count:1b}
 # execute as @s[tag=crafting.crafted.test3] at @s positioned ~ ~1 ~ unless predicate crafting:recipes/test/test3 positioned ~ ~0.5 ~ run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:air",Count:1b}
 
@@ -36,6 +38,8 @@ tag @s remove crafting.crafted.escape
 tag @s remove crafting.crafted.power
 tag @s remove crafting.crafted.life
 tag @s remove crafting.crafted.luck
+tag @s remove crafting.crafted.resistance
+tag @s remove crafting.crafted.levitation
 # tag @s remove crafting.crafted.test2
 # tag @s remove crafting.crafted.test3
 
@@ -113,6 +117,22 @@ execute as @s at @s positioned ~ ~1 ~ if predicate crafting:recipes/potions/luck
 #setting the item in the frame to the crafting result
 execute as @s[tag=crafting.crafted.luck] at @s positioned ~ ~1 ~ unless data entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item{id:"minecraft:potion",Count:1b} run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:potion",Count:1b, tag:{CustomPotionEffects:[{Id:26,Amplifier:4,Duration:24000}],CustomPotionColor:4978176,display:{Name:'"Potion of Luck"'}}}
 
+#recipe 7
+#which recipe
+execute as @s at @s positioned ~ ~1 ~ if predicate crafting:recipes/potions/resistance run tag @s add crafting.crafted.resistance
+#tagging that something is crafted
+execute as @s at @s positioned ~ ~1 ~ if predicate crafting:recipes/potions/resistance run tag @s add crafting.crafted
+#setting the item in the frame to the crafting result
+execute as @s[tag=crafting.crafted.resistance] at @s positioned ~ ~1 ~ unless data entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item{id:"minecraft:potion",Count:1b} run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:potion",Count:1b, tag:{CustomPotionEffects:[{Id:11,Amplifier:1,Duration:9840},{Id:12,Duration:9840}],CustomPotionColor:5933789,display:{Name:'"Potion of Resistance"'}}}
+
+#recipe 8
+#which recipe
+execute as @s at @s positioned ~ ~1 ~ if predicate crafting:recipes/potions/levitation run tag @s add crafting.crafted.levitation
+#tagging that something is crafted
+execute as @s at @s positioned ~ ~1 ~ if predicate crafting:recipes/potions/levitation run tag @s add crafting.crafted
+#setting the item in the frame to the crafting result
+execute as @s[tag=crafting.crafted.levitation] at @s positioned ~ ~1 ~ unless data entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item{id:"minecraft:splash_potion",Count:1b} run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:splash_potion",Count:1b, tag:{CustomPotionEffects:[{Id:25,Amplifier:4,Duration:2400}],CustomPotionColor:16186075,display:{Name:'"Potion of Levitation"'}}}
+
 # #recipe example 2
 # #which recipe
 # execute as @s at @s positioned ~ ~1 ~ if predicate crafting:recipes/rockets/rocket1 run tag @s add crafting.crafted.rocket1
@@ -128,3 +148,5 @@ execute as @s[tag=crafting.crafted.luck] at @s positioned ~ ~1 ~ unless data ent
 # execute as @s at @s positioned ~ ~1 ~ if predicate crafting:recipes/test/test3 run tag @s add crafting.crafted
 # #setting the item in the frame to the crafting result
 # execute as @s[tag=crafting.crafted.test3] at @s positioned ~ ~1 ~ unless data entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item{id:"minecraft:wooden_sword",Count:1b} run data modify entity @e[type=item_frame,limit=1,sort=nearest,tag=crafting.itemframe] Item set value {id:"minecraft:wooden_sword",Count:1b,tag:{display:{Name:'{"text":"I am so custom"}',Lore:['{"text":"the customest sword ever"}']},Damage:0.9,Enchantments:[{id:"minecraft:sharpness",lvl:10s},{id:"minecraft:looting",lvl:5s}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:3,Operation:0,UUID:[I;-1966788,2039563859,-2123628066,-1862249592]}]}}
+
+# execute if data entity @s {}

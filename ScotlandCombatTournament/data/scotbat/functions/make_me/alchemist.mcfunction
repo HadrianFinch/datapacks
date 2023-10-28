@@ -17,4 +17,5 @@ give @s minecraft:potion{CustomPotionEffects:[{Id:11,Amplifier:1,Duration:9840},
 
 give @s minecraft:splash_potion{CustomPotionEffects:[{Id:25,Amplifier:4,Duration:2400}],CustomPotionColor:16186075,display:{Name:'"Potion of Levitation"'}} 2
 
-# give @s command_block{display:{Name:'{"text":"Sculk Powder","color":"dark_blue","bold":false,"italic":false}'},HideFlags:5,CustomModelData:5005,Enchantments:[{}], potion_dust:1b} 32
+# give @s command_block{display:{Name:'{"text":"Sculk Powder","color":"blue","bold":false,"italic":false}'},HideFlags:5,CustomModelData:1,Enchantments:[{}], potion_dust:1b} 32
+give @s command_block{display:{Name:'{"text":"Extract of wither","color":"gold","bold":false,"italic":false}'},HideFlags:5,CustomModelData:2,Enchantments:[{}], wither_juice:1b} 32

@@ -5,10 +5,11 @@
 # execute as @a[scores={aliveCounter=1},tag=respawnExecute] run give @s recovery_compass 
 # execute as @a[scores={aliveCounter=1..},tag=respawnExecute] run tag @s remove respawnExecut
 
-clear @a[gamemode=survival] enchanting_table
-setblock 0 70 0 enchanting_table
+# clear @a[gamemode=survival] enchanting_table
+# setblock 0 70 0 enchanting_table
 
 kill @e[type=piglin_brute]
+
 ######## RIGHT CLICK
 #### Create scoreboard
 scoreboard objectives add wizz minecraft.used:minecraft.carrot_on_a_stick
@@ -202,4 +203,18 @@ execute as @a[nbt={SelectedItem:{id:"minecraft:potion",tag:{death_potion:1b}}}] 
 execute as @a[tag=death_potion,scores={drink_potion=1..}] run kill @s
 execute as @a[nbt=!{SelectedItem:{id:"minecraft:potion",tag:{death_potion:1b}}}] run tag @s remove death_potion
 scoreboard players reset @a drink_potion
+
+gamerule keepInventory true
+
+function scotbat:egg_check
+
+execute as @a[scores={respawned=1..}, tag=dragon_egg_role] at @s run gamerule keepInventory false
+execute as @a[scores={respawned=1..}, tag=dragon_egg_role] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:dragon_egg", Count:1}, PickupDelay: 100}
+execute as @a[scores={respawned=1..}] run clear @s dragon_egg
+scoreboard players set @a[scores={respawned=1..}] respawned 0
+
+execute as @a[tag=dragon_egg_role, limit=1] at @s run effect give @s resistance 1 1 true 
+execute as @a[tag=dragon_egg_role, limit=1] at @s run effect give @s strength 1 0 true
+execute as @a[tag=dragon_egg_role, limit=1] at @s run attribute @s generic.max_health modifier add 455b6f10-31fd-436b-bf3e-585df8e9ef8f "dragon_egg" 10 add
+execute as @a[tag=!dragon_egg_role] at @s run attribute @s generic.max_health modifier remove 455b6f10-31fd-436b-bf3e-585df8e9ef8f
 
