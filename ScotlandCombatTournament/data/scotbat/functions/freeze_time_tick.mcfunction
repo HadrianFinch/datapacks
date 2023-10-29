@@ -2,7 +2,6 @@ execute as @a[tag=freeze_ignored] run schedule function scotbat:freeze_time_tick
 
 execute as @e[tag=!freeze_ignored, type=!player] run tag @s add frozen
 execute as @e[tag=frozen] run data modify entity @s NoAI set value 1b
-execute as @e[tag=!freeze_ignored] run effect give @s blindness 2 2
 execute as @e[tag=!freeze_ignored] run effect give @s slowness 2 100
 execute as @e[tag=!freeze_ignored] run effect give @s slow_falling 2 100
 execute as @e[tag=!freeze_ignored] run effect give @s weakness 2 100
