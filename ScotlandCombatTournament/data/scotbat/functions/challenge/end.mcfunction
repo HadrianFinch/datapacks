@@ -18,3 +18,11 @@ tellraw @a [{"selector":"@s", "color": "gold"},{"text":" Completed the challenge
 
 scoreboard objectives remove challenge_completed_stars
 scoreboard objectives remove challenge_complete
+
+# tp @a ~ ~ ~
+# spreadplayers ~ ~ 5 15 false @a
+# worldborder set 100
+
+# execute as @e[type=armor_stand, tag=challenge_countdown] run kill @s
+# bossbar remove challenge_time_left
+scoreboard objectives remove challenge_time_left
