@@ -1,1 +1,1 @@
-ride @s mount @e[sort=nearest, distance=1..10, limit=1]
+ride @s mount @e[sort=nearest, distance=1..60, limit=1]
