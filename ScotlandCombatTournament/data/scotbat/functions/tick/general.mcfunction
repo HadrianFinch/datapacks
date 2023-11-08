@@ -82,7 +82,6 @@ execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, 
 
 execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s if block ~ ~ ~ water run effect give @s conduit_power 20 0 true
 execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s if block ~ ~ ~ water run effect give @s dolphins_grace 20 0 true
-execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s if block ~ ~ ~ water run effect give @s saturation 2 0 true
 
 
 execute as @a[tag=hunter_role] run item replace entity @s inventory.0 with arrow 64
