@@ -211,7 +211,7 @@ gamerule keepInventory true
 
 function scotbat:egg_check
 
-execute as @a[scores={respawned=1..}, tag=dragon_egg_role] at @s run gamerule keepInventory false
+# execute as @a[scores={respawned=1..}, tag=dragon_egg_role] at @s run gamerule keepInventory false
 execute as @a[scores={respawned=1..}, tag=dragon_egg_role] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:dragon_egg", Count:1}, PickupDelay: 100}
 execute as @a[scores={respawned=1..}] run clear @s dragon_egg
 scoreboard players set @a[scores={respawned=1..}] respawned 0
