@@ -53,7 +53,7 @@ execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run effect 
 execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] run attribute @s generic.max_health base set 16
 execute as @a[nbt={Inventory:[{Slot: 100b, tag:{dasher_boots:1b}}]}] at @s run fill ~-1 ~-2 ~-1 ~1 ~ ~1 obsidian replace lava
 
-execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{regen_aura:1b}}]}] at @s run effect give @a[distance=..3] saturation 4 2 true
+execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{regen_aura:1b}}]}] at @s run effect give @a[distance=..3] absorption 1 0 true
 execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{regen_aura:1b}}]}] at @s run particle effect ~ ~ ~ 3 0 3 1 20 normal @a
 
 execute as @a[tag=cleric_role, gamemode=survival, nbt={Inventory:[{Slot: -106b, tag:{wither_aura:1b}}]}] at @s run effect give @e[type=!player, distance=..5] wither 4 4 true
@@ -205,8 +205,6 @@ execute as @a[nbt={SelectedItem:{id:"minecraft:potion",tag:{death_potion:1b}}}] 
 execute as @a[tag=death_potion,scores={drink_potion=1..}] run kill @s
 execute as @a[nbt=!{SelectedItem:{id:"minecraft:potion",tag:{death_potion:1b}}}] run tag @s remove death_potion
 scoreboard players reset @a drink_potion
-
-gamerule keepInventory true
 
 function scotbat:egg_check
 
