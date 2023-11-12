@@ -85,7 +85,7 @@ execute as @a[nbt={Inventory:[{Slot: 103b, tag:{oceanmaster_crown:1b}}]}] at @s 
 
 
 execute as @a[tag=hunter_role] run item replace entity @s inventory.0 with arrow 64
-# execute as @a[tag=merchant_role] run item replace entity @s inventory.0 with emerald 64
+execute as @a[tag=merchant_role] run item replace entity @s inventory.0 with emerald 64
 execute as @a[tag=ghost_role] run item replace entity @s hotbar.8 with ender_pearl 16
 
 execute as @a[nbt={Inventory:[{Slot: 102b, tag:{invisibility_cloak:1b}}]}] at @s run effect give @s invisibility 2 0 true
