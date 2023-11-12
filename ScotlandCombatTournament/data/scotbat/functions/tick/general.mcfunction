@@ -208,9 +208,14 @@ scoreboard players reset @a drink_potion
 
 function scotbat:egg_check
 
-# execute as @a[scores={respawned=1..}, tag=dragon_egg_role] at @s run gamerule keepInventory false
 execute as @a[scores={respawned=1..}, tag=dragon_egg_role] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:dragon_egg", Count:1}, PickupDelay: 100}
 execute as @a[scores={respawned=1..}] run clear @s dragon_egg
+execute as @a[scores={respawned=1..}] run give @s minecraft:player_head{display:{Name:'{"text":"Token of death and shame"}'},death_token:1b, no_drop:1b ,SkullOwner:{Id:[I;663727451,362627176,-1288195424,-1794765243],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODk1YTA1OTkyYWZhMzdiMzgwNmI4MWYwMDAzY2E2MTdiM2MxY2JiOTE3MGEyMzA5MTE1YjljNmEwM2ViNzNhZiJ9fX0="}]}}} 1
+
+execute as @e[type=item,nbt={Item:{tag:{no_drop:1b}}}] at @s on origin run data modify entity @e[type=item,sort=nearest,limit=1] Owner set from entity @s UUID
+execute as @e[type=item,nbt={Item:{tag:{no_drop:1b}}}] run data modify entity @s PickupDelay set value 0s
+execute as @e[type=item,nbt={Item:{tag:{no_drop:1b}}}] at @s on origin run tp @e[type=item,sort=nearest,limit=1] @s
+
 scoreboard players set @a[scores={respawned=1..}] respawned 0
 
 execute as @a[tag=dragon_egg_role, limit=1] at @s run effect give @s resistance 1 1 true 
