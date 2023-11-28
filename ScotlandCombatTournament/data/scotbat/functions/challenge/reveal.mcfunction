@@ -13,18 +13,31 @@ scoreboard objectives add challenge_completed_stars dummy
 # scoreboard players set @a challenge_completed_stars 2
 # scoreboard objectives add challenge_complete picked_up:dragon_egg
 
-
-title @a title {"text":"Build your base!","color":"green"}
-tellraw @a {"text": "Your goal is make your base as cool as possible", "bold": true}
-tellraw @a {"text": "-- Reward: 1 reward star", "bold": false}
-tellraw @a {"text": "-- Rules: To recive credit, provide a full tour of your base to the entire server", "bold": false}
+title @a title {"text":"Secret","color":"red"}
+tellraw @a {"text": "Each person has a different challenge", "bold": true}
+tellraw @a {"text": "-- Reward: 2 reward stars", "bold": false}
+tellraw @a {"text": "-- Rules: If anyone else guesses your challenge, you fail. You can formally guess each person's challenge once.", "bold": false}
+tellraw @a {"text": "-- YOUR CHALLENGE: Convince another player to jump off a clif", "bold": false}
+tellraw @a {"text": "-- YOUR CHALLENGE: Kill another player by droping an anvil on them", "bold": false}
+tellraw @a {"text": "-- YOUR CHALLENGE: Starting with grass seeds, trade with other players all the way up to a golden apple", "bold": false}
+tellraw @a {"text": "-- YOUR CHALLENGE: Not be IT in the game of tag, if you are IT at the end of the session, you fail", "bold": false}
+tellraw @a {"text": "-- YOUR CHALLENGE: Get another player to accuse you of a task. Whatever they say is now your real task. They would have to guess the wording of this exact text to make you fail.", "bold": false}
+tellraw @a {"text": "-- YOUR CHALLENGE: Steal the dragon egg", "bold": false}
+tellraw @a {"text": "-- YOUR CHALLENGE: Don't call mobs by their names for 30 minutes. (you must talk to other people during this time)", "bold": false}
 tellraw @a {"text": "", "bold": false}
-tellraw @a {"text": "Sub-Challenge: Add a water feature to your base. This can be a fountian, aquarium, etc (+1 reward star)", "italic": true}
+tellraw @a {"text": "Sub-Challenge: No sub challenges today!", "italic": true}
+
+# title @a title {"text":"Scavanger Hunt","color":"green"}
+# tellraw @a {"text": "Your goal is to find the 6 hidden barrels within 300 blocks of spawn", "bold": true}
+# tellraw @a {"text": "-- Reward: 1 reward star + loot for each", "bold": false}
+# tellraw @a {"text": "-- Rules: The boxes are in plain sight, you need not place nor break blocks to find them", "bold": false}
+# tellraw @a {"text": "", "bold": false}
+# tellraw @a {"text": "Sub-Challenge: No sub challenges today!", "italic": true}
 
 #### Main Challenges
-# Work on you base
-
 # Scavenger hunt
+
+# X Work on you base
 # ancient city - who dies the least
 # build a shop / store at spawn
 # design and build a puzzle / maze / ??
@@ -35,7 +48,7 @@ tellraw @a {"text": "Sub-Challenge: Add a water feature to your base. This can b
 # build a sky island
 # anvil trap
 # use your special ability to make someyhing for the other players
-
+# Base seige
 
 
 #### Subchallenges
