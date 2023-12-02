@@ -17,15 +17,58 @@ title @a title {"text":"Secret","color":"red"}
 tellraw @a {"text": "Each person has a different challenge", "bold": true}
 tellraw @a {"text": "-- Reward: 2 reward stars", "bold": false}
 tellraw @a {"text": "-- Rules: If anyone else guesses your challenge, you fail. You can formally guess each person's challenge once.", "bold": false}
-tellraw @a {"text": "-- YOUR CHALLENGE: Convince another player to jump off a clif", "bold": false}
-tellraw @a {"text": "-- YOUR CHALLENGE: Kill another player by droping an anvil on them", "bold": false}
-tellraw @a {"text": "-- YOUR CHALLENGE: Starting with grass seeds, trade with other players all the way up to a golden apple", "bold": false}
-tellraw @a {"text": "-- YOUR CHALLENGE: Not be IT in the game of tag, if you are IT at the end of the session, you fail", "bold": false}
-tellraw @a {"text": "-- YOUR CHALLENGE: Get another player to accuse you of a task. Whatever they say is now your real task. They would have to guess the wording of this exact text to make you fail.", "bold": false}
-tellraw @a {"text": "-- YOUR CHALLENGE: Steal the dragon egg", "bold": false}
-tellraw @a {"text": "-- YOUR CHALLENGE: Don't call mobs by their names for 30 minutes. (you must talk to other people during this time)", "bold": false}
+
+tag @a remove done
+tag @a remove challenge_next
+
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Steal the dragon egg", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Don't call mobs by their names for 30 minutes. (you must talk to other people during this time)", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Not be IT in the game of tag, if you are IT at the end of the session, you fail", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Kill another player by droping an anvil on them", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Get another player to accuse you of a task. Whatever they say is now your real task. They would have to guess the wording of this exact text to make you fail.", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Starting with grass seeds, trade with other players all the way up to a golden apple", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Convince another player to jump off a clif", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Don't call mobs by their names for 30 minutes. (you must talk to other people during this time)", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
 tellraw @a {"text": "", "bold": false}
 tellraw @a {"text": "Sub-Challenge: No sub challenges today!", "italic": true}
+
+tag @a remove done
 
 # title @a title {"text":"Scavanger Hunt","color":"green"}
 # tellraw @a {"text": "Your goal is to find the 6 hidden barrels within 300 blocks of spawn", "bold": true}
