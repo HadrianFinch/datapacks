@@ -1,2 +1,2 @@
-execute as @e[type=item, distance=..1.3] at @s positioned ~ ~3.5 ~ run loot spawn ~ ~ ~ loot scotbat:reward
-kill @e[type=item, distance=..1.3]
+execute as @e[type=item, distance=..1.3, nbt={Item:{tag:{reward_star:1b}}}] at @s positioned ~ ~3.5 ~ run loot spawn ~ ~ ~ loot scotbat:reward
+kill @e[type=item, distance=..1.3, nbt={Item:{tag:{reward_star:1b}}}]
