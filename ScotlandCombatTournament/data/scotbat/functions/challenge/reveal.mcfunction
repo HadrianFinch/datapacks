@@ -22,11 +22,6 @@ tag @a remove done
 tag @a remove challenge_next
 
 
-tag @r[tag=!done] add challenge_next
-tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Steal the dragon egg", "bold": false}
-tag @a[tag=challenge_next] add done
-tag @a remove challenge_next
-
 
 tag @r[tag=!done] add challenge_next
 tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Don't call mobs by their names for 30 minutes. (you must talk to other people during this time)", "bold": false}
@@ -46,6 +41,11 @@ tag @a remove challenge_next
 
 tag @r[tag=!done] add challenge_next
 tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Get another player to accuse you of a task. Whatever they say is now your real task. They would have to guess the wording of this exact text to make you fail.", "bold": false}
+tag @a[tag=challenge_next] add done
+tag @a remove challenge_next
+
+tag @r[tag=!done] add challenge_next
+tellraw @a[tag=challenge_next] {"text": "-- YOUR CHALLENGE: Steal the dragon egg", "bold": false}
 tag @a[tag=challenge_next] add done
 tag @a remove challenge_next
 
