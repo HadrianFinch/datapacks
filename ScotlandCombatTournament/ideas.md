@@ -23,17 +23,12 @@ Has a pair of unbreakable netherite boots that reduce all falldamage, grant Spee
 ## Windrider
 *tag: flight_role*
 
-Has mending elytra and unlimited rockets.
+Has unbreakable elytra and unlimited rockets.
 
 ## Tank
 *tag: tank_role*
 
 Has 50 hearts instead of the usual 10. Cannot wear or hold any armor, it will vanish.
-
-## Wizard
-*tag: wizard_role*
-
-Has a wand and a spellbook, the spellbok is used to purchase spells with xp. Spells can be cast by holding them in the offhand and using the wand with the main hand.
 
 ## Oceanmaster
 Has infinite conduit power and dolphin's grace while in water. Starts with an unbreakable Aqua Affinity Helmet and an unbreakable riptide trident, and an unbreakable loyalty trident.
@@ -70,4 +65,5 @@ Has unlimited emeralds.
 
 ## Cavalier
 Can ride on any entity, mob, or player.
+
 

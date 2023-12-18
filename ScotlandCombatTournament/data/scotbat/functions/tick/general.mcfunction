@@ -223,3 +223,5 @@ execute as @a[tag=dragon_egg_role, limit=1] at @s run effect give @s strength 1 
 execute as @a[tag=dragon_egg_role, limit=1] at @s run attribute @s generic.max_health modifier add 455b6f10-31fd-436b-bf3e-585df8e9ef8f "dragon_egg" 10 add
 execute as @a[tag=!dragon_egg_role] at @s run attribute @s generic.max_health modifier remove 455b6f10-31fd-436b-bf3e-585df8e9ef8f
 
+scoreboard objectives add elytra_remover custom:damage_dealt
+execute as @a[scores={elytra_remover=1..}, nbt={SelectedItem:{tag:{elytra_remover:1b}}}] at @s run clear @a[distance=1..7, nbt={HurtTime:10s}] elytra 1
