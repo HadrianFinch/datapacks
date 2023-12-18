@@ -8,4 +8,4 @@ give @s cobweb 16
 give @s stick{display:{Name:'{"text":"Knockback Stick","bold":false}'},Enchantments:[{id:"minecraft:knockback",lvl:10s}]} 1
 give @s diamond_sword{display:{Name:'{"text":"Poison Dagger","color":"dark_green","bold":false}',Lore:['{"text":"Can insta kill anything","color":"dark_red","bold":false,"italic":true}']},HideFlags:1,Damage:1560,Enchantments:[{id:"minecraft:sharpness",lvl:255s},{id:"minecraft:looting",lvl:255s},{id:"minecraft:sweeping",lvl:255s}]} 1
 give @s ender_pearl 8
-give @s iron_axe{display:{Name:'{"text":"Elytra Be-gone"}'},RepairCost:1000,Damage:2045,elytra_remover:1b,Enchantments:[{}]} 1
+# give @s iron_axe{display:{Name:'{"text":"Elytra Be-gone"}'},RepairCost:1000,Damage:2045,elytra_remover:1b,Enchantments:[{}]} 1
